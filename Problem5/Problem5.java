@@ -38,14 +38,12 @@ public class Problem5 {
                 }
             }
 
-            // If no perfect numbers found
             if (!foundPerfect) {
                 System.out.println("Perfect numbers from 1 to " + limit + ": None");
             } else {
-                System.out.println(); // New line after list
+                System.out.println(); 
             }
 
-            // Ask to continue
             System.out.print("Do you want to continue? (y/n): ");
             response = Character.toUpperCase(scan.next().charAt(0));
 
