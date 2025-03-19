@@ -13,16 +13,13 @@ public class Problem2 {
             Scanner scanner = new Scanner(inputFile);
             PrintWriter writer = new PrintWriter(outputFile);
 
-            //READS ALL THE INPUT IN EmployeeData.Txt
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] parts = line.split("\\s+"); // SPLIT WITH WHITESPACE
-
-                // GET DATA
-                String lastName = parts[0];
-                String firstName = parts[1];
-                double currentSalary = Double.parseDouble(parts[2]);
-                char rank = parts[3].charAt(0);
+            // READS ALL THE INPUT IN EmployeeData.Txt
+            while (scanner.hasNext()) {
+                // GET DATA USING INDIVIDUAL CALLSS
+                String lastName = scanner.next();
+                String firstName = scanner.next();
+                double currentSalary = scanner.nextDouble();
+                char rank = scanner.next().charAt(0);
 
                 // CALCULATE UPDATED SALARY
                 double increasePercentage;
@@ -49,9 +46,9 @@ public class Problem2 {
                 double updatedSalary = currentSalary * increasePercentage;
 
                 // OUTPUT
-                writer.printf("%s %s %.2f%n", firstName, lastName, updatedSalary);
-
+                writer.printf("Full Name: %s %s\nUpdated Salary: Php %.2f%n", firstName, lastName, updatedSalary);
             }
+
             System.out.println("Output: Check EmployeeOutput.dat");
             scanner.close();
             writer.close();
