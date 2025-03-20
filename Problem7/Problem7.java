@@ -25,12 +25,15 @@ public class Problem7 {
             townAGrowth = townAGrowth / 100;
             townBGrowth = townBGrowth / 100;
 
+            if(townBGrowth >=  townAGrowth){
+                System.out.println("Town A will never catch up t Town B's population ");
+                continue;
+            }
+
             while(townA < townB){
                 years++;
                 townA = (int) (townA * (1 + townAGrowth));
                 townB = (int) (townB * (1 + townBGrowth));
-
-                if(townA >= townB) break; //IF TOWN A IS GREATER THAN OR EQUAL TO TOWN B THEN LOOP WILL WILL BREAK
             }
             System.out.printf("After %d years: \n" +
                     "Town A population: %d\n" +

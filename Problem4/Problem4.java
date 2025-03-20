@@ -4,7 +4,7 @@ public class Problem4 {
     public static void main(String[] args) {
 
         char response = ' ', choice;
-        int num1, num2, sum = 0, count = 0, factorial = 1, squares = 1;
+        int num1, num2, sum = 0, count = 0, factorial = 1, squares;
         double average;
         char firstLetter, secondLetter;
 
@@ -47,7 +47,7 @@ public class Problem4 {
                        }
                            average = (double) sum / count;
                            System.out.printf("Sum of all the even integers is: %d\n" +
-                                   "Average of all the even integers: %.2f\n", sum, average);
+                                             "Average of all the even integers: %.2f\n", sum, average);
                        break;
                    case 'C':
                        System.out.print("Enter a positive number to find its factorial: ");
@@ -74,6 +74,7 @@ public class Problem4 {
                        secondLetter = Character.toLowerCase(scan.next().charAt(0));
 
                        if (firstLetter > secondLetter) continue;
+                       System.out.printf("Letters from %c to %c are:\n", firstLetter, secondLetter);
                        for(char letter = firstLetter; letter <= secondLetter; letter++){
                            System.out.println(letter+" "+Character.toUpperCase(letter));
                        }
@@ -88,5 +89,6 @@ public class Problem4 {
            }
         } while (response != 'N');
         System.out.println("TERMINATING PROGRAM!!!");
+        scan.close();
     }
 }

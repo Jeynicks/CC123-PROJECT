@@ -70,5 +70,6 @@ public class Problem1 {
                           ".\n" +
                           "Net Pay: Php %.2f\n" +
                           "------------------", grossPay, (grossPay * SOCIAL_SECURITY_TAX), (grossPay * FEDERAL_INCOME_TAX), (grossPay * STATE_INCOME_TAX), UNION_DUES, HEALTH_INSURANCE, totalDeductions, netPay);
+        scan.close();
     }
 }

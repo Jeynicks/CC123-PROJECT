@@ -41,13 +41,14 @@ public class Problem5 {
             if (!foundPerfect) {
                 System.out.println("Perfect numbers from 1 to " + limit + ": None");
             } else {
-                System.out.println(); 
+                System.out.println();
             }
 
-            System.out.print("Do you want to continue? (y/n): ");
+            System.out.print("Do you wish to to continue (Y/N): ");
             response = Character.toUpperCase(scan.next().charAt(0));
 
         } while (response == 'Y');
         System.out.println("TERMINATING PROGRAM!!!");
+        scan.close();
     }
 }

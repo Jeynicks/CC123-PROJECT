@@ -37,12 +37,15 @@ public class Problem3 {
             }
             else if(serviceCode == 'P'){
                 baseFee = 25.00; //FLAT CHARGE
+
                 System.out.print("Enter Minutes Used (DAYTIME: 6:00 a.m. to 6:00 p.m.): ");
                 dayMins = scan.nextInt();
-                dayCharges = dayMins > 75 ? (dayMins - 75) * 0.10 : 0.0; //TERNARY FOR CHECKING CHARGES
                 System.out.print("Enter Minutes Used (NIGHTTIME: 6:00 p.m. to 6:00 a.m.): ");
                 nightMins = scan.nextInt();
-                nightCharges = nightMins > 100 ? (nightMins - 100) * 0.05 : 0.0; //TERNARY FOR CHECKING CHARGES
+
+                //TERNARY FOR CHECKING CHARGES
+                dayCharges = dayMins > 75 ? (dayMins - 75) * 0.10 : 0.0;
+                nightCharges = nightMins > 100 ? (nightMins - 100) * 0.05 : 0.0;
 
                 amtDue = baseFee + dayCharges + nightCharges; // CALCULATE AMOUNT DUE
 
@@ -63,5 +66,6 @@ public class Problem3 {
 
         }while(response != 'N');
         System.out.println("TERMINATING PROGRAM!!!");
+        scan.close();
     }
 }
